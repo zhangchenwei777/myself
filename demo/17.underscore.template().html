@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>underscore-template</title>
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+<!--
+
+-->
+<div id="box">
+    <ul class="list-group">
+
+    </ul>
+</div>
+<!--定义模版-->
+<!--语法
+<% 这符号之间写的是js代码  %> 否则html代码
+怎么取值？？？
+<%= %> 解析html标签
+<%- %> 解析纯文本 字符串
+
+xss 攻击 （sql脚本 js脚本）  跨站脚本攻击
+
+-->
+<script type="text/template" id="template">
+    <% _.each(model,function(v,k){ %>
+        <li class="list-group-item"><b>第<%=k%>个：</b><%= v.name%> 年龄：<%=v.age%></li>
+    <% }); %>
+</script>
+
+
+<!--<script>
+    var data = ["Cras justo odio","Dapibus ac facilisis in","Morbi leo risus"];
+    var html ="";
+    for(var i = 0; i < data.length ; i++){
+        html += '<li class="list-group-item">'+data[i]+'</li>';
+    }
+    document.querySelector('.list-group').innerHTML = html;
+</script>-->
+<!--
+    模版引擎渲染
+-->
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/underscore/underscore-min.js"></script>
+<script>
+    $(function () {
+        /*数据*/
+        var data = ["Cras justo odio", "Dapibus ac facilisis in", "Morbi leo risus"];
+        var data01 = [{'name':'<script>alert(0);<\/script>','age':'18'},{'name':'小甩甩','age':'17'}];
+        /*1.引入underscorejs*/
+        /*2.需要模版*/
+        /*3.使用underscore当中的template方法  把模版内容转成  模版函数*/
+        /*3.1 获取模版内容*/
+        var templateStr = $('#template').html();
+        /*3.2 转成模版函数*/
+        var templateFuc = _.template(templateStr);
+        /*4.把数据传进去获取解析过后的html字符串*/
+        /*4.1传的是对象 模版当中取得是对象的属性*/
+        var html = templateFuc({model:data01});
+        /*5.渲染*/
+        $('.list-group').html(html);
+    });
+</script>
+</body>
+</html>

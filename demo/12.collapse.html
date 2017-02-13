@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!--当用户用IE浏览器访问页面的时候优先用最新的渲染引擎来渲染页面-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--做了移动端适配 视口 宽度等于设备宽度  默认缩放比是1.0 不允许用户缩放-->
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=0">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+
+    <title>collapse</title>
+
+    <!-- Bootstrap -->
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--
+    html5shiv 在ie低版本浏览器支持html5语义标签
+    respond 在ie低版本浏览器支持媒体
+    -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--
+    不能以file形式打开一面否则respondjs不生效 必须以http形式打开
+    -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--条件注释  小于IE9-->
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!--collapse组件-->
+    <!--
+    data-toggle="collapse"
+    在页面初始化的时候初始成一个折叠组件的控制按钮
+    data-target="#box"
+    控制目标
+    -->
+    <a href="javascript:;"  data-toggle="collapse" data-target=".box">按钮01</a>
+    <button  data-toggle="collapse" data-target="#box">按钮02</button>
+    <a href="#box" data-toggle="collapse">按钮03</a>
+
+    <div id="box" class="box collapse">
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+        内容内容内容内容内容内容内容内容内容内容内容内容
+    </div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../lib/jquery/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

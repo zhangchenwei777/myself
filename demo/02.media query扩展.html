@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>媒体查询</title>
+    <style>
+        body{
+            margin: auto;
+            padding: 0;
+        }
+        .container{
+            width: 1024px;
+            height: 1000px;
+            background: red;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    1.当在超小屏设备   版心宽度100%  背景颜色粉色
+    2.当在小屏设备     版心宽度750px  背景颜色蓝色
+    3.当在中屏设备     版心宽度970px  背景颜色绿色
+    4.当在大屏设备     版心宽度1170px  背景颜色黄色
+    -->
+
+    <!--媒体查询 完成这个需求-->
+
+    <!--媒体基本语法-->
+    <style>
+
+        /*1.当在超小屏设备   版心宽度100%  背景颜色粉色*/
+        .container{
+            width: 100%;
+            background: pink;
+        }
+
+        @media (min-width: 768px){
+            /*2.当在小屏设备     版心宽度750px  背景颜色蓝色*/
+            .container{
+                width: 750px;
+                background: blue;
+            }
+        }
+
+        @media (min-width: 992px) {
+            /*3.当在中屏设备     版心宽度970px  背景颜色绿色*/
+            .container{
+                width: 970px;
+                background: green;
+            }
+        }
+
+        @media (min-width: 1200px){
+            /* 4.当在大屏设备     版心宽度1170px  背景颜色黄色*/
+            .container{
+                width: 1170px;
+                background: yellow;
+            }
+        }
+    </style>
+    <div class="container">
+    </div>
+</body>
+</html>

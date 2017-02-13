@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            font-size: 30px;
+        }
+
+
+        div{
+            color: red;
+        }
+        /*选择到所有的div的紧邻的下一个元素*/
+        /*.second + div{
+            color: green;
+        }*/
+        /*择到所有的div 它下面的所有的兄弟元素*/
+        div ~ div{
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div class="second">2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+</body>
+</html>

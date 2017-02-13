@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/*这个的注释是会编译到css文件当中的*/
+
+//但是这的注释是不会编译在css
+
+
+/*1.变量*/
+//必须以@符开头
+
+@mainColor:#ff0000;
+
+@height:100px;
+
+@mainFontSize:14px;
+
+a{
+  color: @mainColor;
+  height: @height;
+  font-size: @mainFontSize;
+}
+
+b{
+  font-size: @mainFontSize;
+  border: 1px solid @mainColor;
+}
+
+
+/*mixin 混入*/
+
+
+/*/!*字体是14px延时是主体红红色的边框*!/
+.font14{
+  font-size: @mainFontSize;
+}
+.red{
+  color: @mainColor;
+}
+.redBorder{
+  border: 1px solid @mainColor;
+}
+
+/!* css类的混入 *!/
+.font14RedRedBorder{
+  .font14();
+  .red();
+  .redBorder();
+}*/
+
+
+/*方法的混入*/
+/*方法的定义  注意的是 可以定义默认参数*/
+.font14(){
+  color: @mainColor;
+}
+
+.red(){
+  font-size: @mainFontSize;
+}
+
+.redBorder(@width:5px){
+  border: @width solid @mainColor;
+}
+
+/*方法混入*/
+.font14RedRedBorder01{
+  .font14();
+  .red();
+  .redBorder(100px);
+}
+
+
+/*嵌套*/
+.zcw_app{
+  color: #666;
+  position: relative;
+  z-index: 10000;
+  display: block;
+  img{
+    display: none;
+  }
+  &:hover{
+    img{
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 40px;
+      margin-left: -60px;
+      border: 1px solid @mainColor;
+      border-top: none;
+    }
+  }
+}
+
+/*导入 import*/
+@import "vars.less";
+@import "fucs.less";
+
+.importCss{
+  font-size: @font18;
+  .borderRadius(40px);
+}
+
+/*内置函数*/
+a{
+  color: lighten(#222,50%);
+  background: 100px/2;
+}
+
+

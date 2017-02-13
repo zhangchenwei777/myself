@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=0">
+    <title>栅格系统</title>
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .container{
+            height: 100px;
+            background: red;
+        }
+
+        .container > .row{
+            height: 50px;
+        }
+        .container > .row > div{
+            height: 50px;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!--需求：把一行平均分成三份-->
+<!--需求：把一行平均分成四份-->
+<!--栅格系统会把一行平均分成12等份-->
+
+
+    <!--响应式布局类  左右内边距15px-->
+    <div class="container">
+        <!--行 清除父元素内边距效果 margin-left -15px margin-right -15px-->
+        <div class="row">
+            <!--列 column 省略 col-->
+            <!--
+                col-*-*
+                第一个参数  xs sm md lg
+                xs 带这个标识的样式  在超小屏设备以上都生效
+                sm 带这个标识的样式  在小屏设备以上都生效
+                md 带这个标识的样式  在中屏设备以上都生效
+                lg 带这个标识的样式  在大屏设备生效
+                第二个参数  1-12  默认分成12等份
+            -->
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

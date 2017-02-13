@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=0">
+    <title>栅格系统</title>
+    <link href="../lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="../lib/html5shiv/html5shiv.min.js"></script>
+    <script src="../lib/respond/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .container {
+            height: 100px;
+            background: red;
+        }
+
+        .container > .row {
+            height: 50px;
+        }
+
+        .container > .row > div {
+            height: 50px;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 需求
+1.当是大屏设备的时候  把一行分成6等份  1170
+2.当是中屏设备的时候  把一行分成4等份  970
+3.当是小屏设备的时候  把一行分成3等份  750
+4.当是超小屏设备的时候  把一行分成2等份  100%
+-->
+
+<!--响应式布局类  左右内边距15px-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6"></div>
+    </div>
+</div>
+
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.js"></script>
+</body>
+</html>
